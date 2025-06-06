@@ -1,4 +1,6 @@
 :root {
+  font-family: "Roboto", sans-serif;
+
   /* Backgrounds */
   --color-bg: #121212;
   --color-surface: #1e1e1e;
@@ -27,4 +29,5 @@ body,
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-family: "Roboto", sans-serif;
 }
