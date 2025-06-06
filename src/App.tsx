@@ -11,7 +11,7 @@ function App() {
   const [videoId, setVideoId] = useState("lYSJo36KYZk");
 
   return (
-    <div>
+    <div className="app-root">
       <TopBar
         onUrlSubmit={(url: string) => {
           const id = extractYouTubeVideoID(url);
