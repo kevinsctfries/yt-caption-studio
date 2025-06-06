@@ -1,0 +1,30 @@
+:root {
+  /* Backgrounds */
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-surface-alt: #2a2a2a;
+
+  /* Text */
+  --color-text: #e0e0e0;
+  --color-text-muted: #b0b0b0;
+
+  /* Primary / Accent */
+  --color-accent: #bb86fc;
+  --color-accent-light: #e2bfff;
+
+  /* Borders and Lines */
+  --color-border: #333333;
+
+  /* Shadows */
+  --shadow-default: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
