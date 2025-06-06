@@ -1,0 +1,10 @@
+.video-section {
+  flex: 3;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  box-shadow: var(--shadow-default);
+}
+
+.video-section iframe {
+  border: none;
+}

@@ -1,0 +1,41 @@
+.caption-section {
+  flex: 2;
+  overflow: auto;
+}
+
+.caption-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-default);
+  color: var(--color-text);
+}
+
+.caption-table th,
+.caption-table td {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.caption-table th {
+  background-color: var(--color-surface-alt);
+  font-weight: bold;
+  color: var(--color-text-muted);
+}
+
+.caption-table input,
+.caption-table textarea {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
