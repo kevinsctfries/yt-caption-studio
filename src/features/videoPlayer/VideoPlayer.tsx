@@ -2,31 +2,34 @@ import { useEffect, useRef } from "react";
 import { createYouTubePlayer } from "../../services/youtubePlayerService";
 import "./video-player.css";
 
-const VideoPlayer = () => {
+interface VideoPlayerProps {
+  onPlayerReady?: (event: YT.Player) => void;
+}
+
+const VideoPlayer = ({ onPlayerReady }: VideoPlayerProps) => {
   const playerRef = useRef<HTMLDivElement>(null);
+  const playerInstanceRef = useRef<YT.Player | null>(null);
 
   useEffect(() => {
     if (!playerRef.current) return;
 
-    let playerInstance: YT.Player;
-
     createYouTubePlayer(playerRef.current, "dQw4w9WgXcQ", {
       onReady: event => {
+        playerInstanceRef.current = event.target;
+        onPlayerReady?.(event.target);
         console.log("Player ready", event);
       },
       onStateChange: event => {
         console.log("State changed", event.data);
       },
-    }).then(player => {
-      playerInstance = player;
     });
 
     return () => {
-      if (playerInstance) {
-        playerInstance.destroy();
+      if (playerInstanceRef.current) {
+        playerInstanceRef.current.destroy();
       }
     };
-  }, []);
+  }, [onPlayerReady]);
 
   return (
     <div className="video-section">

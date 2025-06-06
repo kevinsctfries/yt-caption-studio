@@ -5,17 +5,3 @@
   box-shadow: var(--shadow-default);
   padding: 15px;
 }
-
-.timeline-track {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-surface-alt);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.timeline-placeholder {
-  color: var(--color-text-muted);
-}
