@@ -3,17 +3,22 @@ import { createYouTubePlayer } from "../../services/youtubePlayerService";
 import "./video-player.css";
 
 interface VideoPlayerProps {
+  videoId: string;
   onPlayerReady?: (event: YT.Player) => void;
 }
 
-const VideoPlayer = ({ onPlayerReady }: VideoPlayerProps) => {
+const VideoPlayer = ({ videoId, onPlayerReady }: VideoPlayerProps) => {
   const playerRef = useRef<HTMLDivElement>(null);
   const playerInstanceRef = useRef<YT.Player | null>(null);
 
   useEffect(() => {
     if (!playerRef.current) return;
 
-    createYouTubePlayer(playerRef.current, "dQw4w9WgXcQ", {
+    if (playerInstanceRef.current) {
+      playerInstanceRef.current.destroy();
+    }
+
+    createYouTubePlayer(playerRef.current, videoId, {
       onReady: event => {
         playerInstanceRef.current = event.target;
         onPlayerReady?.(event.target);
@@ -27,9 +32,10 @@ const VideoPlayer = ({ onPlayerReady }: VideoPlayerProps) => {
     return () => {
       if (playerInstanceRef.current) {
         playerInstanceRef.current.destroy();
+        playerInstanceRef.current = null;
       }
     };
-  }, [onPlayerReady]);
+  }, [videoId, onPlayerReady]);
 
   return (
     <div className="video-section">

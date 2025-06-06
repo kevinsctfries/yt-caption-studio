@@ -7,6 +7,12 @@
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow-default);
   border-radius: var(--radius-default);
+}
+
+.topbar-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
   gap: 1rem;
 }
 
@@ -33,9 +39,4 @@
   border-radius: var(--radius-default);
   cursor: pointer;
   font-size: var(--font-size-base);
-  transition: background-color 0.2s ease;
-}
-
-.topbar-button:hover {
-  background-color: #4338ca;
 }
