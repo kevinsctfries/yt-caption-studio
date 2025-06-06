@@ -44,8 +44,8 @@ export async function createYouTubePlayer(
 
   return new window.YT.Player(element, {
     videoId,
-    width: "100%",
-    height: "100%",
+    width: "560px",
+    height: "315px",
     playerVars: {
       autoplay: 0,
       controls: 1,
