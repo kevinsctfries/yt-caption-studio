@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { createYouTubePlayer } from "../../services/youtubePlayerService"; // adjust path
+import { createYouTubePlayer } from "../../services/youtubePlayerService";
 import "./video-player.css";
 
 const VideoPlayer = () => {
@@ -22,7 +22,6 @@ const VideoPlayer = () => {
     });
 
     return () => {
-      // Optional cleanup if needed
       if (playerInstance) {
         playerInstance.destroy();
       }
