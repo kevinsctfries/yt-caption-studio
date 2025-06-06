@@ -22,3 +22,13 @@
   flex: 1;
   gap: 0.5rem;
 }
+
+@media (max-width: 1200px) {
+  .main-content {
+    flex-direction: column-reverse;
+  }
+
+  .video-section {
+    margin: 0 auto;
+  }
+}
