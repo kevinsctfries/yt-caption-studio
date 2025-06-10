@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createYouTubePlayer } from "../../services/youtubePlayerService";
 import "./video-player.css";
+import CaptionsPreview from "../captionsPreview/CaptionsPreview";
 
 interface VideoPlayerProps {
   videoId: string;
@@ -40,6 +41,7 @@ const VideoPlayer = ({ videoId, onPlayerReady }: VideoPlayerProps) => {
   return (
     <div className="video-section">
       <div ref={playerRef} className="youtube-video" />
+      <CaptionsPreview />
     </div>
   );
 };
