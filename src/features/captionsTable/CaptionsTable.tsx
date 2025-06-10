@@ -1,6 +1,6 @@
-import "./captions.css";
+import "./captions-table.css";
 
-const Captions = () => {
+const CaptionsTable = () => {
   return (
     <div className="caption-section">
       <table className="caption-table">
@@ -43,4 +43,4 @@ const Captions = () => {
   );
 };
 
-export default Captions;
+export default CaptionsTable;

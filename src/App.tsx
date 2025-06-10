@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import Captions from "./features/captions/Captions";
 import Timeline from "./features/timeline/Timeline";
 import VideoPlayer from "./features/videoPlayer/VideoPlayer";
 import TopBar from "./features/topBar/TopBar";
 import { extractYouTubeVideoID } from "./utils/extractYouTubeVideoID";
+import CaptionsTable from "./features/captionsTable/CaptionsTable";
 
 function App() {
   const [player, setPlayer] = useState<YT.Player | null>(null);
@@ -24,7 +24,7 @@ function App() {
       />
       <div className="app-container">
         <div className="main-content">
-          <Captions />
+          <CaptionsTable />
           <VideoPlayer videoId={videoId} onPlayerReady={setPlayer} />
         </div>
         {player && <Timeline player={player} />}
