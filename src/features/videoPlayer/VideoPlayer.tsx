@@ -12,6 +12,7 @@ const VideoPlayer = ({ videoId, onPlayerReady }: VideoPlayerProps) => {
   const playerRef = useRef<HTMLDivElement>(null);
   const playerInstanceRef = useRef<YT.Player | null>(null);
 
+  // Create/destroy player when videoId changes
   useEffect(() => {
     if (!playerRef.current) return;
 
@@ -39,9 +40,12 @@ const VideoPlayer = ({ videoId, onPlayerReady }: VideoPlayerProps) => {
   }, [videoId, onPlayerReady]);
 
   return (
-    <div className="video-section">
-      <div ref={playerRef} className="youtube-video" />
-      <CaptionsPreview />
+    <div className="video-player-container">
+      <div className="video-controls"></div>
+      <div className="video-section">
+        <div ref={playerRef} className="youtube-video" />
+        <CaptionsPreview />
+      </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import CaptionsTable from "./features/captionsTable/CaptionsTable";
 
 function App() {
   const [player, setPlayer] = useState<YT.Player | null>(null);
-  const [videoId, setVideoId] = useState("lYSJo36KYZk");
+  const [videoId, setVideoId] = useState("duzFePqJtZU");
 
   return (
     <div className="app-root">
