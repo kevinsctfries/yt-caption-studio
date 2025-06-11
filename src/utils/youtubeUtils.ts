@@ -6,10 +6,26 @@ export function extractYouTubeVideoID(url: string): string | null {
   return match ? match[1] : null;
 }
 
-// Fetches the width/height from oEmbed and returns the aspect ratio
-export async function fetchYouTubeAspectRatio(
+// Fetches data from oEmbed
+export interface YouTubeVideoData {
+  title: string;
+  author_name: string;
+  author_url: string;
+  type: string;
+  height: number;
+  width: number;
+  version: string;
+  provider_name: string;
+  provider_url: string;
+  thumbnail_height: number;
+  thumbnail_width: number;
+  thumbnail_url: string;
+  html: string;
+}
+
+export async function fetchYouTubeVideoData(
   videoId: string
-): Promise<number | null> {
+): Promise<YouTubeVideoData | null> {
   try {
     const res = await fetch(
       `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`
@@ -17,11 +33,9 @@ export async function fetchYouTubeAspectRatio(
     if (!res.ok) return null;
 
     const data = await res.json();
-    if (!data.width || !data.height) return null;
-
-    return data.width / data.height;
+    return data as YouTubeVideoData;
   } catch (err) {
-    console.error("Failed to fetch YouTube aspect ratio:", err);
+    console.error("Failed to fetch YouTube video data:", err);
     return null;
   }
 }
