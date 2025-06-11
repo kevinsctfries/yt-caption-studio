@@ -3,7 +3,7 @@ import "./App.css";
 import Timeline from "./features/timeline/Timeline";
 import VideoPlayer from "./features/videoPlayer/VideoPlayer";
 import TopBar from "./features/topBar/TopBar";
-import { extractYouTubeVideoID } from "./utils/extractYouTubeVideoID";
+import { extractYouTubeVideoID } from "./utils/youtubeUtils";
 import CaptionsTable from "./features/captionsTable/CaptionsTable";
 
 function App() {
